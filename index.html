@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pi & Web Workers</title>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="main.css" />
+
+  <script defer type="module"
+    src="https://cdn.jsdelivr.net/npm/p5@1.3.0/lib/p5.js"></script>
+  <script defer type="module" src="./draw.js"></script>
+  <script defer type="module" src="./manager.js"></script>
+  <script defer type="module" src="view.js"></script>
+  <script defer type="module" src="./app.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <div class="chart"></div>
+
+    <div id="sketch-holder" class="data-display"></div>
+
+    <div class="display">
+      <div class="display__item">
+        <div class="display__title">Web Worker Count</div>
+        <div class="display__content">
+          <button id="btn-remove" class="btn-count"><i
+              class="fas fa-minus-circle "></i></button>
+          <span class="ww-count" id="lbl-count">5</span>
+          <button id="btn-add" class="btn-count"><i
+              class="fas fa-plus-circle "></i></button>
+        </div>
+      </div>
+      <div class="display__item">
+        <div class="display__title">Simulation Point Count</div>
+        <div class="display__content" id="lbl-point-count">0/1,000,000</div>
+      </div>
+      <div class="display__item">
+        <div class="display__title">Calculated PI</div>
+        <div class="display__content" id="lbl-pi">-</div>
+      </div>
+      <div class="display__item">
+        <div class="display__title">Error</div>
+        <div class="display__content" id="lbl-error">-</div>
+      </div>
+      <div class="display__item">
+        <div class="display__title">Duration</div>
+        <div class="display__content" id="lbl-duration">-</div>
+      </div>
+    </div>
+
+    <footer>
+      <button class="btn-start" id="btn-start">Start</button>
+    </footer>
+  </div>
+</body>
+
+</html>
